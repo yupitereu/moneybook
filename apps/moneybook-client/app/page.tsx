@@ -1,7 +1,15 @@
+'use client';
 import { DefaultButton } from '@repo/ui';
 import Image from 'next/image';
 
 export default function Home() {
+  const handleClick = () => {
+    if (confirm('은주도 나 사랑하지?')) {
+      alert('좋아 좋아! 나도 은주 사랑해~ 😘\n\n오늘 저녁에 맛있는거 먹자!');
+    } else {
+      alert('아니야... 😢\n\n그래도 은주는 나의 사랑이야~ 😘');
+    }
+  };
   return (
     <div className="background grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -10,7 +18,8 @@ export default function Home() {
           <li className="mb-2">
             Get started by editing <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">app/page.tsx</code>.
           </li>
-          <li>Save and see your changes instantly.</li>
+          <li className="mb-2">Save and see your changes instantly.</li>
+          <li>안녕 여기다 가계부 앱을 만들거야</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
@@ -32,7 +41,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-        <DefaultButton variant="default" size="lg">
+        <DefaultButton variant="default" size="lg" onClick={handleClick}>
           Click me!
         </DefaultButton>
       </main>
